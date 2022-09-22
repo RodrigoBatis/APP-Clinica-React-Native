@@ -1,0 +1,14 @@
+com/appclinica/ReactNativeFlipper.java
+ com.appclinica.ReactNativeFlipper
+ com.appclinica.ReactNativeFlipper$1
+ com.appclinica.ReactNativeFlipper$2
+ com.appclinica.ReactNativeFlipper$2$1
+com/appclinica/BuildConfig.java
+ com.appclinica.BuildConfig
+com/appclinica/MainApplication.java
+ com.appclinica.MainApplication
+ com.appclinica.MainApplication$1
+com/appclinica/MainActivity.java
+ com.appclinica.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
