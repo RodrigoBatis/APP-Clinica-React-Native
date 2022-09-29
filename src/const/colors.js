@@ -3,6 +3,7 @@ const COLORS ={
    dark_blue  : "#073e9c",
    black: '#000',
    light: '#F3F4FB',
+   red: '#ff0000',
 }
 
 export default COLORS;
