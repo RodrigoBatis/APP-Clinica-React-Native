@@ -77,8 +77,8 @@ const CadastroPaciente = () => {
       <ScrollView style={estilos.scroll}>
         <View style={estilos.viewForm}>
           <Text style={estilos.title}>{Titulo}</Text>
-          {/* <Image style={estilos.img} source='../assets/logo.png'/> */}
-          <Input 
+          <Image style={estilos.img} source={require('../assets/logo.png')}/>
+          <Input  
             placeholder="Nome Paciente:*" 
             iconName="account" 
             error={errors.nomePaciente}
@@ -124,7 +124,7 @@ const CadastroPaciente = () => {
  const estilos = StyleSheet.create({
     viewForm:{
       flex:1,
-      marginTop:10,
+      marginTop:2,
       alignItems:"center",
       justifyContent:"center"
     },
