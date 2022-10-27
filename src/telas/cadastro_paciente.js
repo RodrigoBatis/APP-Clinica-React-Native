@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {Text, View, StyleSheet, SafeAreaView, ScrollView, Image} from "react-native";
 
-
 import Input from "../componentes/input";
 import Button from "../componentes/button";
 import COLORS from "../const/colors";
+import apiClinica from "../service/apiClinica";
 
 const Titulo = "Medmoria"
 
@@ -14,7 +14,9 @@ const CadastroPaciente = () => {
     nomePaciente:'',
     telefonePaciente:'',
     celularPaciente:'',
-    emailPaciente:''
+    emailPaciente:'',
+    nomeResponsavel:'',
+    telefoneResponsavel:'',
   });
 
   const handlerOnChange = (text, input)=>{
@@ -65,7 +67,15 @@ const CadastroPaciente = () => {
     const cadastrar = ()=>{
 
       try{
-        console.log('Cadastrou');
+        const response = apiLivraria.post('/cadastrarLivros', 
+        {
+          nomePaciente:     inputs.nomePaciente,
+          telefonePaciente:  inputs.telefonePaciente,
+          celularPaciente:     inputs.celularPaciente,
+          emailPaciente: inputs.emailPaciente,
+          nomeResponsavel: inputs.nomeResponsavel,
+          telefoneResponsavel: inputs.telefonePaciente,
+        });
       }catch(error){}
 
   }
