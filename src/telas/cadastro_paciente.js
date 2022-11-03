@@ -62,25 +62,23 @@ const CadastroPaciente = () => {
       console.log('CADASTROU');
     }
 
-    console.log(errors);
-
-    const cadastrar = ()=>{
+  }
+  const cadastrar = ()=>{
 
       try{
-        const response = apiLivraria.post('/cadastrarLivros', 
+        const response = apiClinica.post('/cadastrarPaciente', 
         {
-          nomePaciente:     inputs.nomePaciente,
-          telefonePaciente:  inputs.telefonePaciente,
-          celularPaciente:     inputs.celularPaciente,
-          emailPaciente: inputs.emailPaciente,
-          nomeResponsavel: inputs.nomeResponsavel,
-          telefoneResponsavel: inputs.telefonePaciente,
-        });
+          nome_paciente:     inputs.nomePaciente,
+          telefone_paciente:  inputs.telefonePaciente,
+          celular_paciente:     inputs.celularPaciente,
+          email_paciente: inputs.emailPaciente,
+          nome_responsavel: inputs.nomeResponsavel,
+          telefone_responsavel: inputs.telefoneResponsavel,
+        })
       }catch(error){}
 
-  }
+    }
 
-  }
 
   return(
     <SafeAreaView style={estilos.safe}>
@@ -97,7 +95,8 @@ const CadastroPaciente = () => {
 
           <Input 
             placeholder="Telefone Paciente:*" 
-            iconName="phone" 
+            iconName="phone"
+            keyboardType="numeric"
             error={errors.telefonePaciente}
             onFocus={()=>{handlerErrors(null, 'telefonePaciente')}}
             onChangeText = {(text)=>handlerOnChange(text, 'telefonePaciente')}/>
@@ -105,6 +104,7 @@ const CadastroPaciente = () => {
           <Input 
             placeholder="Celular Paciente:*" 
             iconName="cellphone"
+            keyboardType="numeric"
             error={errors.celularPaciente}
             onFocus={()=>{handlerErrors(null, 'celularPaciente')}}
             onChangeText = {(text)=>handlerOnChange(text, 'celularPaciente')}/>
@@ -116,9 +116,18 @@ const CadastroPaciente = () => {
             onFocus={()=>{handlerErrors(null, 'emailPaciente')}}
             onChangeText = {(text)=>handlerOnChange(text, 'emailPaciente')}/>
 
-          <Input placeholder="Nome Responsável:" iconName="account-multiple"/>
+          <Input 
+          placeholder="Nome Responsável:" 
+          iconName="account-multiple"
+            onChangeText = {(text)=>handlerOnChange(text, 'nomeResponsavel')}
+            />
 
-          <Input placeholder="Telefone Responsável:" iconName="phone-plus"/>
+          <Input 
+          placeholder="Telefone Responsável:" 
+          iconName="phone-plus"
+          keyboardType="numeric"
+            onChangeText = {(text)=>handlerOnChange(text, 'telefoneResponsavel')}
+            />
           
           <Button 
           title={"Enviar Cadastro"} 
